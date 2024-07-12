@@ -1,3 +1,4 @@
+import ClipboardCopy from '@docusaurus/ClipboardCopy';
 # EPoL: An Efficient Consensus in Blockchain Using Machine Learning
 
 
@@ -17,13 +18,12 @@ Download Ethereum Files from official website :
 
 Step 2 :  Create a folder ethereum and nodes as subfolder in home directory where the ethreum files downloaded must be present.
 
-<details>
-<summary>Click to copy</summary>
-```bash
+<Create Directorie>```bash
 mkdir ethereum
 cd ethereum
 mkdir node1 node2 node3 node4
-</details>
+
+
 Nodes must be created, each with a unique account hash and authentication (password), functioning as participants in the system. These nodes were connected to their respective accounts. To achieve this, we used "geth," an executable file generated , which facilitates the creation and running of Ethereum nodes. 
 
 
