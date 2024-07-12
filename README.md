@@ -9,7 +9,7 @@ In this project, we have implemented machine learning algorithms to select miner
 
 We have implemented a multi-node configuration of Ethereum by incorporating the Efficient Proof of Learning (EPoL) consensus mechanism. Specifically, we focused on the ethash files and used the Go programming language to develop our new consensus algorithm, EPoL. In this new approach, we replaced the code of the PoW consensus mechanism with our implementation, which involves training datasets using machine learning algorithms.
 
-###Below are the steps to run EPoL setup on Ubuntu :
+## Below are the steps to run EPoL setup on Ubuntu :
 
 Step 1 : 
 Download Ethereum Files from official website :
