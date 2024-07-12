@@ -1,4 +1,5 @@
-# EPoL
+# EPoL: An Efficient Consensus in Blockchain Using Machine Learning
+
 
 Proof of Work (PoW) describes a consensus mechanism that requires a significant amount of computing effort from a network of devices, commonly known as mining. In a typical PoW system, miners compete to solve cryptographic puzzles, where the goal is to find a specific nonce value using the SHA-256 algorithm. This process is computationally intensive and requires significant energy expenditure, as miners must repeatedly hash different nonce values until the correct one is found. However, the energy consumed in this process could be directed towards more meaningful computational tasks. Machine learning models can be trained to solve real-world problems, and their integration into blockchain could enhance the system’s overall utility. This approach can also mitigate the issue of resource wastage associated with traditional PoW mechanisms.
 
