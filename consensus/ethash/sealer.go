@@ -146,6 +146,7 @@ func (ethash *Ethash) mine(block *types.Block, id int, seed uint64, abort chan s
 	logger := ethash.config.Log.New("miner", id)
 	logger.Trace("Started ethash search for new nonces", "seed", seed)
 search:
+	
 	for {
 		select {
 		case <-abort:
@@ -153,7 +154,6 @@ search:
 			logger.Trace("Ethash nonce search aborted", "attempts", nonce-seed)
 			ethash.hashrate.Mark(attempts)
 			break search
-
 		default:
 			// We don't have to update hash rate on every nonce, so update after after 2^X nonces
 			attempts++
@@ -162,17 +162,23 @@ search:
 				attempts = 0
 			}
 			// Compute the PoW value of this nonce
-			digest, result := hashimotoFull(dataset.dataset, hash, nonce)
-			if new(big.Int).SetBytes(result).Cmp(target) <= 0 {
+			//digest, result := hashimotoFull(dataset.dataset, hash, nonce)
+			result1,sel := machineL()
+			//if new(big.Int).SetBytes(result).Cmp(target) <= 0 {
+			//}
+			if result1 >=75.0{
 				// Correct nonce found, create a new header with it
+				log.Info("Accuracy achived ======== ", result1)
+				fmt.Printf("Choice selected = %d\n",sel)
 				header = types.CopyHeader(header)
 				header.Nonce = types.EncodeNonce(nonce)
-				header.MixDigest = common.BytesToHash(digest)
-
+				header.Accuracy = new(big.Float).SetFloat64(result1)
 				// Seal and return a block (if still needed)
 				select {
 				case found <- block.WithSeal(header):
 					logger.Trace("Ethash nonce found and reported", "attempts", nonce-seed, "nonce", nonce)
+					log.Info("Accuracy 2 achived == ", result1)
+					fmt.Printf("acc = %.2f",result1)
 				case <-abort:
 					logger.Trace("Ethash nonce found but discarded", "attempts", nonce-seed, "nonce", nonce)
 				}
@@ -408,7 +414,7 @@ func (s *remoteSealer) submitWork(nonce types.BlockNonce, mixDigest common.Hash,
 
 	start := time.Now()
 	if !s.noverify {
-		if err := s.ethash.verifySeal(nil, header, true); err != nil {
+		if err := s.ethash.verifySealML(nil,header,true,sel); err != nil {
 			s.ethash.config.Log.Warn("Invalid proof-of-work submitted", "sealhash", sealhash, "elapsed", common.PrettyDuration(time.Since(start)), "err", err)
 			return false
 		}
