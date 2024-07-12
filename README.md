@@ -1,4 +1,3 @@
-import ClipboardCopy from '@docusaurus/ClipboardCopy';
 # EPoL: An Efficient Consensus in Blockchain Using Machine Learning
 
 
@@ -16,19 +15,21 @@ Step 1 :
 Download Ethereum Files from official website :
 
 
-Step 2 :  Create a folder ethereum and nodes as subfolder in home directory where the ethreum files downloaded must be present.
-
-<Create Directorie>```bash
-mkdir ethereum
-cd ethereum
-mkdir node1 node2 node3 node4
+Step 2 :  Create a folder ethereum and nodes as subfolders in home directory where the ethreum files downloaded must be present.
 
 
-Nodes must be created, each with a unique account hash and authentication (password), functioning as participants in the system. These nodes were connected to their respective accounts. To achieve this, we used "geth," an executable file generated , which facilitates the creation and running of Ethereum nodes. 
+
+Step 3 : Nodes must be initialised with a unique account hash and authentication (password), functioning as participants in the system. These nodes were connected to their respective accounts. To achieve this, we used "geth," an executable file generated , which facilitates the creation and running of Ethereum nodes. 
 
 
-Next, we made a special file called a genesis file in a simple JSON format to initialize the blockchain. This file was created using "puppeth," a tool that helps manage private Ethereum networks. The genesis file includes the hash of the accounts and acts as an initializer for the blockchain. This file is linked to all nodes.
 
-We then generated a "boot node" to aid in the effective communication of nodes. The bootnode generates a bootkey, which must be running in the background to help nodes stay connected in the network. With all preparations complete, we started the blockchain on each terminal representing each node, with each node using its communication channel (port). This process ensures our modified blockchain with the EPoL consensus mechanism starts up successfully.
+Step 4 :  A special file called a genesis file in a simple JSON format to initialize the blockchain. This file was created using "puppeth," a tool that helps manage private Ethereum networks. The genesis file includes the hash of the accounts and acts as an initializer for the blockchain. This file is linked to all nodes.
 
-With the preparations complete, we started the blockchain on each terminal representing a node. Each node uses its communication port to interact with the network, ensuring our modified blockchain with the EPoL consensus mechanism starts up successfully. This design ensures that the transition from PoW to EPoL is smooth, with all nodes functioning cohesively in the network.
+Step 5 : A "boot node" must be generated to aid in the effective communication of nodes. 
+
+step 6 : Then get bootkey, which must be running in the background to help nodes stay connected in the network. 
+
+Step 7 : With all preparations complete, we started the blockchain on each terminal representing each node, with each node using its communication channel (port). This process ensures our modified blockchain with the EPoL consensus mechanism starts up successfully.
+
+
+
