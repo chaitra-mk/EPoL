@@ -12,12 +12,13 @@ We have implemented a multi-node configuration of Ethereum by incorporating the 
 ## Below are the steps to run EPoL setup on Ubuntu :
 
 Step 1 : 
-Download Ethereum Files from official website :
+Download Ethereum Files from official website and replace the consensus folder in go->src->consensus with the one given in this repository.
 
 
 Step 2 :  Create a folder ethereum and nodes as subfolders in home directory where the ethreum files downloaded must be present.
-
-
+```bash
+mkdir ethereum 
+cd ethereum
 
 Step 3 : Nodes must be initialised with a unique account hash and authentication (password), functioning as participants in the system. These nodes were connected to their respective accounts. To achieve this, we used "geth," an executable file generated , which facilitates the creation and running of Ethereum nodes. 
 
