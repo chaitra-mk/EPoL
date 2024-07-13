@@ -28,7 +28,7 @@ mkdir node1 node2 node3 node4
 ```
 
 ### Step 3:
-Compile the Ethereum code by running the command below inside a terminal opened in the `go/src` folder and then copy the `geth` executable file from the `go/bin` folder into the `ethereum` (workspace) folder.
+Compile the Ethereum code by running the command below inside a terminal opened in the `go/src/ethereum/go-ethereum` folder and then copy the `geth` executable file from the `go/bin` folder into the `ethereum` (workspace) folder.
 
 ```bash
 go install -v ./cmd/geth
