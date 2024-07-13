@@ -73,19 +73,25 @@ sudo bootnode -nodekey boot.key
 ```
 
 ### Step 9:
-With all preparations complete, start the blockchain on each terminal representing each node, with each node using its communication channel (port). This process ensures our modified blockchain with the EPoL consensus mechanism starts up successfully.
+With all preparations complete, start the blockchain on each terminal representing each node, with each node using its communication channel (port). This process ensures our modified blockchain with the EPoL consensus mechanism starts up successfully. Run each of the following in separate terminals.
 
 ```bash
 sudo ./geth --allow-insecure-unlock --datadir ~/ethereum/node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'localhost' --rpcport 8501 --rpcapi 'personal,db,eth,net,web3,txpool,miner' --bootnodes 'enode://<bootnode_enode>@127.0.0.1:0?discport=30301' --networkid 1515 --gasprice '1' --mine console
+```
 
+```bash
 sudo ./geth --allow-insecure-unlock --datadir ~/ethereum/node2/ --syncmode 'full' --port 30312 --rpc --rpcaddr 'localhost' --rpcport 8502 --rpcapi 'personal,db,eth,net,web3,txpool,miner' --bootnodes 'enode://<bootnode_enode>@127.0.0.1:0?discport=30301' --networkid 1515 --gasprice '1' --mine console
+```
 
+```bash
 sudo ./geth --allow-insecure-unlock --datadir ~/ethereum/node3/ --syncmode 'full' --port 30313 --rpc --rpcaddr 'localhost' --rpcport 8503 --rpcapi 'personal,db,eth,net,web3,txpool,miner' --bootnodes 'enode://<bootnode_enode>@127.0.0.1:0?discport=30301' --networkid 1515 --gasprice '1' --mine console
+```
 
+```bash
 sudo ./geth --allow-insecure-unlock --datadir ~/ethereum/node4/ --syncmode 'full' --port 30314 --rpc --rpcaddr 'localhost' --rpcport 8504 --rpcapi 'personal,db,eth,net,web3,txpool,miner' --bootnodes 'enode://<bootnode_enode>@127.0.0.1:0?discport=30301' --networkid 1515 --gasprice '1' --mine console
 ```
 
 ### Step 10:
-The geth console will be ready for each node and you can interact with Ethereum.
+The Geth console will be active for each node, allowing you to interact with the Ethereum network.
 
 ---
